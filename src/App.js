@@ -1,24 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+import Page from "./page"
 import './App.css';
+import { Provider } from 'react-redux';
+import customeStore from './redux/store';
+import "react-web-tabs/dist/react-web-tabs.css";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Provider store={customeStore}> <Page/></Provider>
+     
     </div>
   );
 }
